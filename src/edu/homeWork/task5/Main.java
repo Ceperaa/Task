@@ -19,6 +19,15 @@ public class Main {
             stringList.add(word);
         }
         int numVowels = 0;
+        
+        Comparator<String> comparator = new Comparator<String>() { // Максимально всё выносим ненужное из for блоков, т.к. новые объекты будут засорять память при каждой итерации.
+            @Override
+            public int compare(String left, String right) {
+                return left.length() - right.length();
+            }
+        };
+        List<String> list = new ArrayList<String>();
+        
         for (int y = 0; y < stringList.size(); y++) {
             for (int i = 0; i < stringList.get(y).length(); i++) {
                 char v = stringList.get(y).charAt(i);
@@ -32,16 +41,9 @@ public class Main {
                 stringBuf.add(buffer.toString());
                 output = stringBuf.get(y);
 
-                List<String> list = new ArrayList<String>();
+                list.clear();
                 list.add(output);
-                Comparator<String> comparator = new Comparator<String>() {
-                    @Override
-                    public int compare(String left, String right) {
-                        return left.length() - right.length();
-                    }
-                };
                 Collections.sort(list, comparator);
-
 
                 y = y + 1;
                 System.out.print(" В строке № " + y + ": " + numVowels + " гласных " + output.substring(0, 1).toUpperCase() + output.substring(1) + "\n");
