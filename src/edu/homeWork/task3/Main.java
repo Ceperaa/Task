@@ -29,14 +29,15 @@ public class Main {
         int x4 = scalar * x2;
         int y4 = scalar * y2;
 
-        System.out.println("Вектор 1 * вектор 2 = " + product);
+        System.out.println("Вектор 1 * вектор 2 = " + product); // Старайся не использовать в принте русский текст. Это же касается комментирования кода, названия переменных и т.д.
         System.out.println("Вектор 1 * скаляр = {" + x3 + ", " + y3 + '}');
         System.out.println("Вектор 2 * скаляр = {" + x4 + ", " + y4 + '}');
         System.out.println("Длинна вектора 1 - " + vectorLength(x1, y1));
         System.out.println("Длинна вектора 2 - " + vectorLength(x2, y2));
+        // По задаче: т.к. у нас на входе x, y координаты, а z отсутствует => в ответе мы получаем (x: 0, y: 0, z: значение). Т.е. нулевой 2d вектор, либо 3d вектор с z координатой, отличной, либо равной нулю.
     }
 
-    public static double vectorLength(int x, int y) {
+    private static double vectorLength(int x, int y) {
         double solution = Math.pow(x, 2) + Math.pow(y, 2);
         return Math.sqrt(solution);
     }
