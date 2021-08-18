@@ -26,4 +26,6 @@ public class DragMetal {
     public int getId() {
         return 0;
     }
+    
+    // Мы ложим данный класс в ArrayList. В таких классах обязательна реализация hashCode и equals методов для сравнения и уникальности объектов в листе.
 }
