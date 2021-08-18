@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
 
         List<DragMetal> drag = new ArrayList<>();
-        List<Seif> list = new ArrayList();
+        List<Seif> list = new ArrayList(); // Скорее всего, где-то ошибка в логике. Т.к. у нас один сейф, а в нём уже лист из предметов. значит: Класс Seif с полем List<Предмет>. 
         DragMetal dragMetal = null;
 
         drag.add(new DragMetal(700, 2, "Кольцо"));
@@ -36,7 +36,7 @@ public class Main {
                 dragMetal = list.get(i).getDragMetal();
                 System.out.println(" name " + dragMetal.name +
                         " price " + dragMetal.price +
-                        " amount " + dragMetal.amount);
+                        " amount " + dragMetal.amount); // В данном случае мы должны обращаться уже через геттеры к полям класса.
             } else {
                 System.out.println("Сейф забит ");
                 break;
