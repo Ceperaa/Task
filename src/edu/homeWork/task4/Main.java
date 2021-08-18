@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
-        int number = in.nextInt();
+        int number = in.nextInt(); // nextInt может выбрасывать исключение. По условию должна быть проверка блоком try-catch. В реальной программе тоже.
         if (number >= 2 && number <= 100000) {
             for (int j = 2; j <= number; j++) {
                 if (number % j == 0) {
